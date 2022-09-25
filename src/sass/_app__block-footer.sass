@@ -1,0 +1,66 @@
+.footer
+	margin-top: -50px
+	color: var(--form-ghost-color)
+	.footer-text,
+	.nav-link
+		--bs-nav-link-color: var(--form-ghost-color)
+		font-size: 12px
+		letter-spacing: 1.2px
+		text-transform: uppercase
+	& &__wave
+		width: 100%
+		height: auto
+	& &__wrapper
+		background-color: #0F1932
+		padding: 150px 0 40px
+		+lg
+			padding-top: 110px
+	& &__content
+		&-contacts
+			+lg
+				order: 1
+				margin-top: 80px
+		&-form
+	& &__contact-list
+		display: inline-flex
+		flex-direction: column
+		z-index: 2
+		&-wrapper
+			padding: 180px 0
+			background: url(../img/static/dot-c.png) 50% 50% no-repeat
+			background-size: contain
+			display: flex
+			justify-content: center
+			position: relative
+			overflow: hidden
+		.contact-icon
+			--c: var(--form-ghost-color)
+			--c-icon: var(--form-ghost-color)
+			font-size: 15px
+	& &__form
+		&-title
+		&-desc
+			font-size: 20px
+		&-input
+			padding-bottom: 32px
+			textarea.form-control
+				min-height: 200px
+			&-list
+				margin-top: 25px
+		&-btn
+			min-width: 260px
+	& &__bottom
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: 120px
+		+md
+			margin-top: 60px
+			flex-direction: column
+		&-nav
+			+md-min
+				margin-left: -16px
+	& &__copyright
+		margin: 0
+		+md
+			margin-top: 20px

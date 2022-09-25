@@ -1,0 +1,38 @@
+/**
+ * Позначка обов'язкового поля *
+ */
+.required-label
+	&::before
+		content: '*'
+		position: absolute
+		top: rem(-2px)
+		right: rem(-12px)
+		display: block
+	&--red::before
+		color: $danger
+
+
+
+.form-default
+	.col-form-label,
+	.form-label
+		text-transform: uppercase
+		font-size: 12px
+		font-weight: 700
+		letter-spacing: 2.2px
+	.form-control
+		border-radius: 2px
+	&--ghost
+		.col-form-label,
+		.form-label
+			color: var(--bs-white)
+		.form-control
+			background-color: transparent
+			color: var(--form-ghost-color)
+			border-color: #626877
+			&:focus
+				box-shadow: 0 0 0 0.25rem rgba($form-ghost-color, .18)
+			&::placeholder
+				color: #{shade-color($form-ghost-color, 40%)}
+
+

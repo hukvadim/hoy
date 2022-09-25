@@ -1,0 +1,16 @@
+{
+	"page": {
+
+		"home"      : "index.html",
+		"price"     : "price.html",
+
+		"components"  : "components.html",
+		"404"         : "404.html"
+	},
+
+	"phone": "(381) 683-9822",
+	"phoneHref": "3816839822",
+	"phone2": "+33 9 74 67 00 00",
+	"phone2Href": "+33974670000",
+	"email": "contact@voxnode.com"
+}

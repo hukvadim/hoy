@@ -1,0 +1,273 @@
+$bem: '.header'
+.header
+	& &__box
+	& &__title
+		font-size: 76px
+		margin-bottom: 44px
+		+lg
+			font-size: 66px
+		+sm
+			font-size: 46px
+		&-mark
+			color: #53579f
+			+lg
+				display: block
+	& &__desc
+		font-size: 20px
+		margin-bottom: 62px
+	&--default
+		padding-top: 54px
+		#{$bem}__title
+			margin-bottom: 52px
+		#{$bem}__desc
+			max-width: 900px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 34px
+	&--border
+		#{$bem}__box
+			border: 10px solid var(--bs-black)
+			min-height: 600px
+			padding: 30px 30px 40px
+			padding-top: 135px
+			+lg
+				padding-top: 60px
+		#{$bem}__desc
+			font-size: 26px
+			+md
+				font-size: 24px
+			+sm
+				font-size: 20px
+		#{$bem}__btn
+			+sm
+				--bs-btn-padding-x: 10px
+				width: 100%
+	
+
+
+
+
+
+$bem: '.try-voice'
+.try-voice
+	& &__tab
+		cursor: pointer
+		text-align: center
+		padding: 30px 10px 18px
+		min-width: 260px
+		position: relative
+		border-bottom: 0.0625rem solid #f3f3f3
+		transition: .25s
+		+sm
+			min-width: auto
+			display: inline-block
+			padding-left: 20px
+			padding-right: 20px
+		&-list
+			margin: 42px 0 60px
+			position: relative
+			display: flex
+			flex-wrap: nowrap
+			justify-content: flex-start
+			align-items: flex-start
+			&::before
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+		&.active,
+		&:hover
+			color: var(--bs-primary)
+			border-color: var(--bs-primary)
+			#{$bem}__tab-img
+				filter: grayscale(0%)
+		&.active
+			font-weight: 700
+		&-img
+			filter: grayscale(100%)
+			transition: .25s
+			margin-bottom: 10px
+		&-label
+			--bs-link-color: var(--bs-black)
+			transition: .25s
+			display: block
+			font-size: 18px
+	& &__title
+		font-size: 32px
+		margin: 10px 0 25px
+		font-weight: 700
+	& &__desc
+		font-size: 16px
+		line-height: 1.6
+		margin-bottom: 34px
+	& &__list
+		display: flex
+		flex-wrap: wrap
+		margin-bottom: 20px
+		li
+			font-size: 16px
+			margin-bottom: 15px
+			width: 50%
+			padding-right: 20px
+
+	.tab-content
+
+		.tab-pane
+			.code-toolbar
+				+lg-min
+					margin-right: 30px
+					pre
+						min-height: 340px
+			.col--code
+				+lg
+					order: 1
+					margin-top: 40px
+
+
+
+
+.card-icon-text
+	background-color: #fff
+	border-radius: 6px
+	box-shadow: 0px 4px 20px 0px rgba(56, 67, 86, 0.1)
+	padding: 32px
+	display: flex
+
+	.card-icon-text__icon
+		background-color: #f9f7fd
+		width: 64px
+		height: 64px
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		color: var(--bs-primary)
+		margin-bottom: 20px
+		flex-shrink: 0
+
+		.icon
+			--sz: 23px
+
+	.card-icon-text__content
+		padding-left: 20px
+
+	.card-icon-text__title
+		color: #0f1932
+		font-size: 20px
+		font-weight: 700
+		margin-bottom: 8px
+
+	.card-icon-text__desc
+		color: var(--text-color)
+		font-size: 14px
+		margin: 0
+
+.build-stuff
+	.card-icon-text
+		margin-bottom: 55px
+	.row
+		--bs-gutter-x: 55px
+
+
+
+
+
+.price-table-card
+	display: flex
+	align-items: center
+	border: 1px solid #e4e8ed
+	background-color: #fff
+	border-radius: 20px
+	padding: 30px 0
+	position: relative
+	background-image: url('../img/static/dots.png')
+	background-repeat: no-repeat
+	background-position: 118% 82%
+	&__value
+		padding-right: 20px
+	&__title
+		font-weight: 700
+		font-size: 20px
+	&__desc
+		margin: 0
+	&__num-hold
+	
+	&__num
+		margin: 0
+		font-size: 40px
+		display: flex
+		align-items: flex-end
+		flex-wrap: wrap
+		&-value
+			margin-right: 8px
+			line-height: 1
+		&-value,
+		.currency
+			margin-bottom: 5px
+			position: relative
+		.currency
+			font-size: 18px
+			white-space: nowrap
+			position: relative
+			top: -2px
+			&-detail
+				font-size: 15px
+				margin-left: 7px
+				font-style: normal
+
+
+
+
+.price-table
+	--sz-value: 40%
+	--sz-num: 20%
+	--padding-value: 30px
+	.block-title
+		font-size: 40px
+		margin-bottom: 30px
+	.block-description
+	.price-sz-value
+		width: var(--sz-value)
+	.price-sz-num
+		width: var(--sz-num)
+	& &__label
+		color: #7e8fa7
+		font-size: 12px
+		font-weight: 700
+		letter-spacing: 1.5px
+		text-transform: uppercase
+		display: flex
+		justify-content: space-between
+		white-space: nowrap
+		&:last-child::after
+			display: none
+		&::after
+			content: '//'
+			width: 100%
+			text-align: center
+			opacity: .4
+		&.price-sz-value
+			padding-left: var(--padding-value)
+		&-list
+			display: flex
+			margin-bottom: 15px
+	.price-table-card
+		margin-bottom: 35px
+		&:last-child
+			margin-bottom: 0
+		.badge
+			--bg: #f2e295
+			--text: #0f1932
+			background-color: var(--bg) !important
+			color: var(--text) !important
+			position: absolute
+			top: -12px
+			left: calc(var(--padding-value) - 11px)
+			font-size: 12px
+			padding: 7px 11px 5px
+			border-radius: 4px
+		.price-sz-value
+			padding-left: var(--padding-value)
+	& &__card-list
+	& &__content

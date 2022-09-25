@@ -1,0 +1,328 @@
+\:root
+	--nav-size: #{rem($nav-size)}
+	--text-color: #334455
+	--form-ghost-color: #{$form-ghost-color}
+	+lg
+		--nav-size: 149px
+
+@font-face
+	font-family: 'Maison Neue'
+	font-weight: 400
+	src: url('../fonts/MaisonNeue-Book.eot')
+	src: url('../fonts/MaisonNeue-Book.eot?#iefix') format("embedded-opentype"), url('../fonts/MaisonNeue-Book.woff2') format("woff2"), url('../fonts/MaisonNeue-Book.woff') format("woff"), url('../fonts/MaisonNeue-Book.ttf') format("truetype"), url('../fonts/MaisonNeue-Book.svg#Maison Neue') format("svg")
+
+@font-face
+	font-family: 'Maison Neue'
+	font-weight: 700
+	src: url('../fonts/MaisonNeueExtended-Bold.eot')
+	src: url('../fonts/MaisonNeueExtended-Bold.eot?#iefix') format("embedded-opentype"), url('../fonts/MaisonNeueExtended-Bold.woff2') format("woff2"), url('../fonts/MaisonNeueExtended-Bold.woff') format("woff"), url('../fonts/MaisonNeueExtended-Bold.ttf') format("truetype"), url('../fonts/MaisonNeueExtended-Bold.svg#Maison Neue Extended') format("svg")
+
+body
+	&.nav-padding,
+	.nav-padding
+		padding-top: var(--nav-size)
+	&::before,
+	.show-abstract-bg
+		content: ''
+		z-index: 1
+		position: fixed
+		top: 0
+		left: 0
+		opacity: 0
+		transition: all .25s .15s
+		cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E"), auto
+
+
+svg
+	--sz: 1.5rem 
+	--w: var(--sz)
+	--h: var(--sz)
+	position: relative
+	width: var(--w)
+	height: var(--h)
+
+a
+	position: relative
+	transition: .25s
+
+.z-index
+	z-index: 2
+	position: relative
+
+.ov-hidden
+	overflow: hidden
+	position: relative
+
+.d-flex-center
+	display: flex
+	justify-content: center
+	align-items: center
+
+.img
+	width: 100%
+
+.abs-center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+.rotate-180
+	transform: rotate(180deg)
+
+.detail
+	--t : initial 
+	--b : initial 
+	--r : initial 
+	--l : initial
+	--rt: 0deg
+	--op: 1
+	position: absolute
+	width: var(--sz)
+	height: var(--sz)
+	background-color: var(--bg)
+	border-radius: var(--rs)
+	top: var(--t)
+	bottom: var(--b)
+	right: var(--r)
+	left: var(--l)
+	transform: rotate(var(--rt))
+	opacity: var(--op)
+
+.scroll-horizontal
+	overflow-x: scroll
+	&::-webkit-scrollbar
+		display: none
+
+
+.animate-typing[data-animate-index="0"]::after
+	animation: animateCursor 400ms infinite alternate cubic-bezier(.68,-0.55,.27,1.55) !important
+	position: relative
+	top: -0.1875rem
+
+.icon-terminal
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		bottom: 7px
+		right: -6px
+		width: 10px
+		opacity: 1
+		border-bottom: 2px solid
+		animation: blink .8s linear infinite alternate
+	.icon
+		--sz: 20px
+
+@keyframes blink 
+	100%
+		opacity: 0
+
+
+
+.block-divider
+	padding-bottom: 90px
+
+.block-title
+	font-size: 48px
+	font-weight: 700
+	margin-bottom: 60px
+	+sm
+		font-size: 42px
+	&--sm
+		font-size: 28px
+		margin-bottom: 20px
+
+.block-description
+	font-size: 18px
+
+
+.navbar-nav
+	.nav-link
+		--bs-nav-link-hover-color: var(--bs-primary)
+
+
+.dropdown-toggle
+	display: flex
+	align-items: center
+	&.no-icon
+		&::after
+			display: none !important
+	&::after
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 0.8125rem
+		position: relative
+		border: none !important
+		width: 0.8125rem
+		height: 0.8125rem
+		margin-left: 0.4375rem
+		transition: .25s
+		top: -0.125rem
+	&.white-toggle
+		&::after
+			opacity: .75
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+	&.show,
+	&:hover
+		&::after
+			transform: rotate(180deg)
+
+.dropdown.lang-switch
+	.dropdown-toggle
+		&::after
+			top: 0
+
+.dropdown-menu
+	&.show
+		display: flex
+		flex-direction: column
+
+.dropdown.dropdown-hover,
+.dropdown-center.dropdown-hover
+	.dropdown-toggle
+		&::after
+			top: -0.125rem
+		&:focus,
+		&:focus-visible
+			box-shadow: none
+			border: transparent
+			outline: none
+
+
+.list-dots
+	li
+		position: relative
+		padding-left: 20px
+		&::before
+			content: ''
+			position: absolute
+			top: 6px
+			left: 0
+			border-radius: 50%
+			width: 9px
+			height: 9px
+			background-color: #4b62b7
+
+
+
+$bem: '.contact-icon'
+.contact-icon
+	--c: var(--text-color)
+	--c-h: var(--bs-primary)
+	--c-icon: var(--bs-white)
+	color: var(--c)
+	display: flex
+	align-items: center
+	flex-direction: row
+	margin: 0 0 16px
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		color: var(--c-h)
+		#{$bem}__icon
+			color: var(--c-h)
+	& &__icon
+		--sz: 38px
+		width: var(--sz)
+		height: var(--sz)
+		display: flex
+		justify-content: center
+		align-items: center
+		background-color: #293551
+		margin-right: 15px
+		border-radius: 50%
+		color: var(--c-icon)
+		transition: .25s
+		.icon
+			--sz: 16px
+	& &__value
+	&#{$bem}--wh
+		--c: var(--bs-white)
+		#{$bem}__icon
+		#{$bem}__value
+
+
+
+
+.circle-animation
+	--sz: 410px
+	--bd-color: var(--bs-white)
+	--bd-color-second: rgba(101, 119, 151, 0.3)
+	height: var(--sz)
+	width: var(--sz)
+	z-index: 0
+	position: absolute
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		width: 100%
+		height: 100%
+		border-radius: 50%
+		border: 2px solid var(--bd-color-second)
+	&:before
+		animation: rotateacw 30s linear infinite 0s
+		border-top-color: var(--bd-color)
+		border-right-color: var(--bd-color)
+		width: 82%
+		height: 82%
+	&:after
+		animation: rotateacw 24s linear infinite 0s
+		border-top-color: var(--bd-color)
+		border-bottom-color: var(--bd-color)
+
+@keyframes rotateacw
+	0%
+		transform: translate(-50%, -50%) rotate(0)
+	100%
+		transform: translate(-50%, -50%) rotate(-360deg)
+
+
+
+
+
+.link-hover-line,
+.link-hover-wrapper a
+	position: relative
+	&::before
+		content: ''
+		position: absolute
+		bottom: 0
+		right: 0
+		height: 0
+		width: 0
+		border-bottom: 0.0625rem solid
+		transition: .35s
+	&:hover::before
+		width: 100%
+		left: 0
+		right: auto
+
+
+.list-nice-check
+	margin: 0
+	padding: 0
+	list-style-type: none
+	font-size: 18px
+	li
+		position: relative
+		padding-left: 40px
+		margin: 20px 0
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 26px
+			height: 26px
+			border-radius: 50%
+			background-color: #e8f6f3
+			background-repeat: no-repeat
+			background-position: center center
+			background-size: 24px
+			background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='%2334ae99' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6' d='m6 10 3 3 6-6'/></svg>")

@@ -1,0 +1,184 @@
+$bem: '.btn'
+.btn
+	--bs-btn-font-weight: 500
+	--bs-btn-padding-x: #{rem(25px)}
+	--bs-btn-border-width: #{rem(2px)}
+	--bs-btn-border-color: var(--bs-black)
+	--bs-btn-hover-color: var(--bs-primary)
+	--bs-btn-hover-bg: #F9F7FD
+	--bs-btn-hover-border-color: var(--bs-primary)
+	--bs-btn-border-radius: 0
+	position: relative
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	padding-top: 10px
+	padding-bottom: 8px
+	.icon-terminal
+		margin-left: 5px
+	.icon
+		--sz: 17px
+		&:first-child
+			margin-right: 7px
+		&:last-child
+			margin-left: 7px
+	&.btn-line-text
+		--bs-btn-border-width: 0
+		--bs-btn-border-radius: 0
+		--bs-btn-padding-x: 0
+		--bs-btn-padding-y: 0
+		--bs-btn-line-height: 1
+		--bs-btn-font-weight: 600
+		--bs-btn-font-size: #{rem(9px)}
+		--bs-btn-color: var(--bs-black)
+		--bs-btn-hover-color: var(--bs-primary)
+		--bs-btn-bg: transparent
+		--bs-btn-hover-bg: transparent
+		--bs-btn-active-bg: transparent
+		--bs-btn-active-color: transparent
+		text-transform: uppercase
+		width: rem(44px)
+		height: rem(44px)
+		display: flex
+		justify-content: center
+		align-items: center
+		&:focus,
+		&:active
+			color: var(--bs-primary)
+		&:hover
+			#{$bem}-line-text__span
+				&::before
+					width: rem(19px)
+				&::after
+					width: rem(28px)
+		#{$bem}-line-text__span
+			position: relative
+			display: flex
+			align-items: flex-end
+			letter-spacing: rem(2px)
+			height: rem(25px)
+			min-width: rem(23px)
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				width: rem(28px)
+				height: rem(2px)
+				background-color: var(--bs-black)
+				transition: .35s
+			&::before
+			&::after
+				width: rem(19px)
+				top: rem(8px)
+	&.btn-ghost
+		--bs-btn-border-color: transparent
+	&.btn-primary
+		--bs-btn-bg: #F9F7FD
+	&.btn-success
+		--bs-btn-color: #{rgba($black, .9)}
+	&.btn-danger
+		--bs-btn-color: #{rgba($white, .9)}
+		--bs-btn-hover-color: var(--bs-white)
+		--bs-btn-hover-bg: #{shade-color($red, 5%)}
+		--bs-btn-hover-border-color: #{shade-color($red, 5%)}
+	&.btn-warning
+		--bs-btn-color: #{rgba($black, .88)}
+	&.btn-info
+		--bs-btn-color: #{rgba($white, .85)}
+		--bs-btn-hover-color: var(--bs-white)
+	&.btn-light
+		--bs-btn-hover-color: var(--bs-link-hover-color)
+		--bs-btn-hover-bg: #{$gray-200}
+		--bs-btn-hover-border-color: #{$gray-200}
+	&.btn-dark
+		--bs-btn-color: #{rgba($white, .92)}
+	&.btn-gradiend
+		--bs-btn-color: var(--bs-white)
+		--bs-btn-hover-color: var(--bs-black)
+		--bs-btn-padding-x: 40px
+		--bs-btn-padding-y: 20px
+		--bs-btn-font-size: 20px
+		--bs-btn-border-color: transparent
+		background: #ff156e
+		background: linear-gradient(to right,#ff156e 0,#ff4c53 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff156e', endColorstr='#ff4c53', GradientType=1 )
+		border-left: 1px solid #ff4d53
+		border-right: 1px solid #ff156e
+		box-shadow: 0 0 0 10px #f7f7f7
+		border-radius: 0
+		&:hover
+			background: #ff4c53
+			background: linear-gradient(to right,#ff4c53 0,#ff156e 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4c53', endColorstr='#ff156e', GradientType=1 )
+	&.btn-shadow
+		--bs-btn-bg: #f9f7fd
+		--bs-btn-color: #{$black}
+		--bs-btn-font-size: #{rem(18px)}
+		--bs-btn-hover-bg: var(--bs-black)
+		--bs-btn-hover-color: var(--bs-white)
+		--bs-btn-hover-border-color: var(--bs-black)
+		--bs-btn-padding-y: #{rem(9px)}
+		--bs-btn-padding-x: #{rem(25px)}
+		--bs-btn-border-color: #{$black}
+		font-weight: 700
+		box-shadow: 8px 8px 0 var(--bs-primary)
+		top: -6px
+		transition: all .25s
+		&:hover
+			top: 0
+			box-shadow: 0 0 0 var(--bs-primary)
+	
+	&.btn-outline-primary
+		--bs-btn-color: var(--bs-link-color)
+		--bs-btn-border-color: #{shade-color($blue, 5%)}
+		--bs-btn-hover-color: var(--bs-link-hover-color)
+		--bs-btn-hover-border-color: var(--bs-primary)
+	&.btn-outline-light
+		--bs-btn-color: var(--bs-gray-dark)
+		--bs-btn-border-color: var(--bs-gray-300)
+		--bs-btn-hover-color: var(--bs-link-hover-color)
+	&.btn-outline-success
+		--bs-btn-color: #{shade-color($green, 40%)}
+		--bs-btn-border-color: #{shade-color($green, 2%)}
+	&.btn-outline-danger
+		--bs-btn-border-color: #{tint-color($red, 40%)}
+	&.btn-outline-warning
+		--bs-btn-color: #{shade-color($yellow, 25%)}
+		--bs-btn-border-color: #{tint-color($yellow, 10%)}
+	&.btn-outline-info
+		--bs-btn-color: #{shade-color($cyan, 20%)}
+		--bs-btn-border-color: #{tint-color($cyan, 25%)}
+	&.btn-outline-secondary
+		--bs-btn-border-color: #{shade-color($gray-400, 2%)}
+	&.btn-outline-dark
+		--bs-btn-border-color: #{$gray-700}
+
+	&.btn-gray-100
+		--bs-btn-color: var(--bs-gray-100) !important
+	&.btn-gray-200
+		--bs-btn-color: var(--bs-gray-200) !important
+	&.btn-gray-300
+		--bs-btn-color: var(--bs-gray-300) !important
+	&.btn-gray-400
+		--bs-btn-color: var(--bs-gray-400) !important
+	&.btn-gray-500
+		--bs-btn-color: var(--bs-gray-500) !important
+	&.btn-gray-600
+		--bs-btn-color: var(--bs-gray-600) !important
+	&.btn-gray-700
+		--bs-btn-color: var(--bs-gray-700) !important
+	&.btn-gray-800
+		--bs-btn-color: var(--bs-gray-800) !important
+	&.btn-gray-900
+		--bs-btn-color: var(--bs-gray-900) !important
+
+	&.btn-sm
+		padding-top: #{rem(6px)}
+		padding-bottom: #{rem(6px)}
+	&.btn-lg
+		--bs-btn-padding-x: #{rem(40px)}
+		--bs-btn-font-size: #{rem(20px)}
+		padding-top: #{rem(18px)}
+		padding-bottom: #{rem(18px)}
